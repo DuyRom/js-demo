@@ -10,4 +10,9 @@ class FeatureUpdateController extends Controller
     {
     	return true;
     }
+
+    public function Ftupdate2($value='')
+    {
+    	# code...
+    }
 }
