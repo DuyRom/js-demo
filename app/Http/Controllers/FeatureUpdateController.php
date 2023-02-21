@@ -8,8 +8,8 @@ class FeatureUpdateController extends Controller
 {
     public function featureUpdate($value='')
     {
-    	return true;
-    	return 2;
+    	$a = 1;
+    	return $a;
     }
 
     public function featureCreate($value='')
