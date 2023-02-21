@@ -26,7 +26,8 @@ class Usercontroller extends Controller
     {
         $user = User::find($id);
         $user->name = $request->name;
-        $user->email = $request->email;
+        $user->email = $request->emails;
+        $user->email = $request->password;
         $user->save();
         return response()->json($user);
     }
