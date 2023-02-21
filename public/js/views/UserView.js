@@ -40,7 +40,6 @@ class UserView {
 
   renderUsers() {
     this.table.innerHTML = '';
-    console.log(this.users);
     this.users.forEach(user => {
       const row = document.createElement('tr');
       row.innerHTML = `
@@ -56,7 +55,8 @@ class UserView {
       const editButton = row.querySelector('.edit-btn');
       editButton.addEventListener('click', event => {
         const id = event.target.getAttribute('data-id');
-        const user = this.users.find(u => u.id === id);
+        // const user = this.users.find(u => u.id === id);
+        const user = this.users.find(u => u.id === parseInt(id));
         this.nameInput.value = user.name;
         this.emailInput.value = user.email;
         this.submitButton.innerText = 'Update';
