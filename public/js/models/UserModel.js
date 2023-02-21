@@ -38,11 +38,19 @@ class UserModel {
   }
 
   async deleteUser(id) {
+    const token = document.head.querySelector('meta[name="csrf-token"]').content;
+
     await fetch(`/users/${id}`, {
       method: 'DELETE',
+      headers: {
+        'X-CSRF-TOKEN': token
+      }
     });
+
     const index = this.users.findIndex(u => u.id === id);
     this.users.splice(index, 1);
+
     return true;
   }
+
 }
